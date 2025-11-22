@@ -233,45 +233,6 @@ Ready-to-go Vite React blueprint wired for APPNEURAL quality workflows.
 `
     }
   },
-  "adminnexus-service": {
-    description: "APPNEURAL AdminNexus domain service",
-    files: {
-      "package.json": JSON.stringify(
-        {
-          name: "appneural-adminnexus-service",
-          private: true,
-          version: "0.1.0",
-          scripts: {
-            dev: "ts-node src/index.ts"
-          },
-          dependencies: {
-            "class-transformer": "^0.5.1",
-            "class-validator": "^0.14.0"
-          },
-          devDependencies: {
-            typescript: "^5.6.0",
-            "ts-node": "^10.9.2"
-          }
-        },
-        null,
-        2
-      ),
-      "src/index.ts": `import { bootstrapAdminNexus } from './modules/adminnexus';
-
-bootstrapAdminNexus().catch((error) => {
-  console.error('APPNEURAL AdminNexus bootstrap failed', error);
-});
-`,
-      "src/modules/adminnexus.ts": `export async function bootstrapAdminNexus() {
-  console.log('APPNEURAL AdminNexus service online');
-}
-`,
-      "README.md": `# APPNEURAL AdminNexus Service
-
-Opinionated service harness to plug into the 76 microservice generator.
-`
-    }
-  }
 };
 
 export type BlueprintName = keyof typeof BLUEPRINTS;
